@@ -1,0 +1,9 @@
+{
+  "platform": "bilibili",
+  "search": {
+    "success": false,
+    "count": 0
+  },
+  "video_info": null,
+  "download": null
+}

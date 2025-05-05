@@ -1,0 +1,48 @@
+2025-05-05 04:40:04,650 - __main__ - INFO - 开始测试以下平台: youtube, bilibili
+2025-05-05 04:40:04,650 - __main__ - INFO - === 开始测试平台: youtube ===
+2025-05-05 04:40:04,650 - __main__ - INFO - 执行命令: C:\Users\Admin\AppData\Local\Programs\Python\Python310\python.exe C:\unbeknown\exe_project\src\examples\multi_platform_test.py --platform youtube --query Python programming --limit 2 --output-json results_youtube_20250505_044004.json
+2025-05-05 04:40:06,633 - __main__ - ERROR - youtube 测试错误:
+2025-05-05 04:40:06,634 - __main__ - ERROR -   WARNING:root:未安装facebook-downloader库，将使用内置方法下载视频
+2025-05-05 04:40:06,634 - __main__ - ERROR -   WARNING:pytube.contrib.search:Unexpected renderer encountered.
+2025-05-05 04:40:06,634 - __main__ - ERROR -   WARNING:pytube.contrib.search:Renderer name: dict_keys(['lockupViewModel'])
+2025-05-05 04:40:06,634 - __main__ - ERROR -   WARNING:pytube.contrib.search:Search term: Python programming
+2025-05-05 04:40:06,635 - __main__ - ERROR -   WARNING:pytube.contrib.search:Please open an issue at https://github.com/pytube/pytube/issues and provide this log output.
+2025-05-05 04:40:06,635 - __main__ - ERROR -   WARNING:pytube.contrib.search:Unexpected renderer encountered.
+2025-05-05 04:40:06,635 - __main__ - ERROR -   WARNING:pytube.contrib.search:Renderer name: dict_keys(['lockupViewModel'])
+2025-05-05 04:40:06,635 - __main__ - ERROR -   WARNING:pytube.contrib.search:Search term: Python programming
+2025-05-05 04:40:06,635 - __main__ - ERROR -   WARNING:pytube.contrib.search:Please open an issue at https://github.com/pytube/pytube/issues and provide this log output.
+2025-05-05 04:40:06,635 - __main__ - ERROR -   WARNING:pytube.contrib.search:Unexpected renderer encountered.
+2025-05-05 04:40:06,635 - __main__ - ERROR -   WARNING:pytube.contrib.search:Renderer name: dict_keys(['reelShelfRenderer'])
+2025-05-05 04:40:06,635 - __main__ - ERROR -   WARNING:pytube.contrib.search:Search term: Python programming
+2025-05-05 04:40:06,636 - __main__ - ERROR -   WARNING:pytube.contrib.search:Please open an issue at https://github.com/pytube/pytube/issues and provide this log output.
+2025-05-05 04:40:06,636 - __main__ - ERROR -   WARNING:pytube.contrib.search:Unexpected renderer encountered.
+2025-05-05 04:40:06,636 - __main__ - ERROR -   WARNING:pytube.contrib.search:Renderer name: dict_keys(['reelShelfRenderer'])
+2025-05-05 04:40:06,636 - __main__ - ERROR -   WARNING:pytube.contrib.search:Search term: Python programming
+2025-05-05 04:40:06,636 - __main__ - ERROR -   WARNING:pytube.contrib.search:Please open an issue at https://github.com/pytube/pytube/issues and provide this log output.
+2025-05-05 04:40:06,636 - __main__ - ERROR -   WARNING:pytube.contrib.search:Unexpected renderer encountered.
+2025-05-05 04:40:06,636 - __main__ - ERROR -   WARNING:pytube.contrib.search:Renderer name: dict_keys(['lockupViewModel'])
+2025-05-05 04:40:06,636 - __main__ - ERROR -   WARNING:pytube.contrib.search:Search term: Python programming
+2025-05-05 04:40:06,637 - __main__ - ERROR -   WARNING:pytube.contrib.search:Please open an issue at https://github.com/pytube/pytube/issues and provide this log output.
+2025-05-05 04:40:06,637 - __main__ - ERROR -   WARNING:pytube.contrib.search:Unexpected renderer encountered.
+2025-05-05 04:40:06,637 - __main__ - ERROR -   WARNING:pytube.contrib.search:Renderer name: dict_keys(['lockupViewModel'])
+2025-05-05 04:40:06,637 - __main__ - ERROR -   WARNING:pytube.contrib.search:Search term: Python programming
+2025-05-05 04:40:06,637 - __main__ - ERROR -   WARNING:pytube.contrib.search:Please open an issue at https://github.com/pytube/pytube/issues and provide this log output.
+2025-05-05 04:40:06,638 - __main__ - ERROR -   ERROR:src.modules.vca.platform_adapters.youtube:提取视频信息失败: HTTP Error 400: Bad Request
+2025-05-05 04:40:06,638 - __main__ - ERROR -   ERROR:src.modules.vca.platform_adapters.youtube:提取视频信息失败: HTTP Error 400: Bad Request
+2025-05-05 04:40:06,638 - __main__ - INFO - youtube 测试结果摘要:
+2025-05-05 04:40:06,639 - __main__ - INFO -   搜索: 失败, 找到 0 个结果
+2025-05-05 04:40:06,639 - __main__ - INFO - === 开始测试平台: bilibili ===
+2025-05-05 04:40:06,639 - __main__ - INFO - 执行命令: C:\Users\Admin\AppData\Local\Programs\Python\Python310\python.exe C:\unbeknown\exe_project\src\examples\multi_platform_test.py --platform bilibili --query Python programming --limit 2 --output-json results_bilibili_20250505_044006.json
+2025-05-05 04:40:07,452 - __main__ - ERROR - bilibili 测试错误:
+2025-05-05 04:40:07,452 - __main__ - ERROR -   WARNING:root:未安装facebook-downloader库，将使用内置方法下载视频
+2025-05-05 04:40:07,452 - __main__ - ERROR -   ERROR:src.modules.vca.platform_adapters.bilibili:搜索页面失败: Expecting value: line 1 column 1 (char 0)
+2025-05-05 04:40:07,452 - __main__ - INFO - bilibili 测试结果摘要:
+2025-05-05 04:40:07,452 - __main__ - INFO -   搜索: 失败, 找到 0 个结果
+2025-05-05 04:40:07,453 - __main__ - INFO - 
+=== 所有平台测试结果摘要 ===
+2025-05-05 04:40:07,453 - __main__ - INFO - 平台: youtube
+2025-05-05 04:40:07,453 - __main__ - INFO -   搜索: 失败, 找到 0 个结果
+2025-05-05 04:40:07,453 - __main__ - INFO - 平台: bilibili
+2025-05-05 04:40:07,453 - __main__ - INFO -   搜索: 失败, 找到 0 个结果
+2025-05-05 04:40:07,454 - __main__ - INFO - 所有测试结果已保存到: test_results.json
+2025-05-05 04:40:07,454 - __main__ - INFO - 所有平台测试完成

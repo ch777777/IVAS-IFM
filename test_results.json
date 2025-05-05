@@ -1,0 +1,20 @@
+{
+  "youtube": {
+    "platform": "youtube",
+    "search": {
+      "success": false,
+      "count": 0
+    },
+    "video_info": null,
+    "download": null
+  },
+  "bilibili": {
+    "platform": "bilibili",
+    "search": {
+      "success": false,
+      "count": 0
+    },
+    "video_info": null,
+    "download": null
+  }
+}
