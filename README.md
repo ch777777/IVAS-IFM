@@ -1,354 +1,721 @@
-# IVAS-IFM 视频平台API集成服务
+# IVAS-IFM: Integrated Video Analysis System
 
-这是一个为IVAS-IFM系统设计的视频平台API集成服务，整合了多个开源项目的功能，包括：
+<div align="center">
+  <img src="https://i.imgur.com/YM0RTtU.png" alt="IVAS-IFM Logo" width="200"/>
+  <h1>IVAS-IFM</h1>
+  <p><strong>Integrated Video Analysis & Processing System - Intelligent Feed Management</strong></p>
+  
+  [![Status: Concept](https://img.shields.io/badge/Status-Concept-blue.svg)](https://github.com/ch777777/IVAS-IFM)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  ![Platform](https://img.shields.io/badge/Platform-Cross--Platform-green.svg)
+  [![Documentation](https://img.shields.io/badge/docs-English-blue.svg)](README.md)
+  [![文档](https://img.shields.io/badge/文档-中文-red.svg)](README_CN.md)
+</div>
 
-- **Douyin_TikTok_Download_API**: 提供抖音、TikTok等平台的视频解析和下载功能
-- **TikHub API**: 提供稳定的抖音、TikTok、小红书等多平台视频解析服务
-- **BibiGPT**: 提供视频内容摘要功能（当前为模拟实现）
-- **KrillinAI**: 提供视频文本翻译功能（当前为模拟实现）
-- **Butterfly**: 提供统一的API接口（已集成到本项目中）
+<hr>
 
-## 功能特点
+## 📋 Overview
 
-- 支持多平台视频信息获取 (抖音、TikTok、小红书等)
-- 获取无水印视频下载链接
-- 视频内容摘要生成
-- 视频文本翻译功能
-- RESTful API接口设计
+**IVAS-IFM** (Integrated Video Analysis System - Intelligent Feed Management) is an innovative conceptual platform designed to unify video content analysis across multiple social platforms. The project aims to provide content researchers, marketers, and analysts with a streamlined workflow for extracting, processing, and gaining insights from video content across popular platforms.
 
-## 环境要求
+> ⚠️ **Note:** This project is currently in the conceptual phase and has not begun active development.
 
-- Python 3.9+
-- pip
+<p align="center">
+  <img src="https://i.imgur.com/bVmNWPo.png" alt="IVAS-IFM System Concept" width="700"/>
+</p>
 
-## 安装与启动
+## 🌟 Core Features (Planned)
 
-1. 克隆项目并进入项目目录
-```bash
-mkdir ivas_api_integration
-cd ivas_api_integration
-```
+### Multi-Platform Integration
+- **Platform Support**
+  - TikTok International content analysis
+  - Douyin (Chinese TikTok) data processing
+  - Xiaohongshu platform integration
+  - Unified cross-platform API interface
+  - Smart URL recognition and platform detection
 
-2. 创建并激活虚拟环境
-```bash
-python -m venv venv
-.\venv\Scripts\activate  # Windows
-source venv/bin/activate  # Linux/Mac
-```
+### Content Analysis Capabilities
+- **Data Extraction & Organization**
+  - Automatic video metadata extraction
+  - Structured data storage
+  - Intelligent tag classification
+  
+- **Intelligent Analysis**
+  - GPT-driven content understanding
+  - Multi-dimensional sentiment analysis
+  - Trend identification and prediction
+  - User behavior analysis
+  
+- **Data Visualization**
+  - Real-time data display
+  - Trend chart generation
+  - Interactive analysis interface
 
-3. 安装依赖
-```bash
-pip install requests aiohttp fastapi uvicorn httpx
-```
+### Content Transformation & Localization
+- **Multilingual Processing**
+  - Video content translation
+  - Smart subtitle generation
+  - Multilingual voice synthesis
+  
+- **Format Conversion**
+  - Cross-platform format adaptation
+  - Media format conversion
+  - Batch processing capabilities
 
-4. 配置TikHub API (如果使用TikHub API)
-   - 将`config.example.json`复制为`config.json`
-   - 在`config.json`中填入你的TikHub API密钥
-   - 或者设置环境变量`TIKHUB_API_KEY`
+### Advanced Management Features
+- **Batch Operations**
+  - Parallel video processing
+  - Bulk data export
+  - Automated workflows
+  
+- **Scheduled Tasks**
+  - Smart data collection
+  - Regular report generation
+  - Automatic analysis updates
 
-5. 启动原始服务器 (不使用TikHub API)
-```bash
-uvicorn app:app --host 0.0.0.0 --port 8000 --reload
-```
+## 🏗️ System Architecture Design
 
-6. 或启动TikHub API服务
-```bash
-# Windows
-run_tikhub_api.bat
-# 或使用集成启动菜单
-start_service.bat  # 然后选择选项2
-
-# Linux/Mac
-python run_tikhub_api.py
-```
-
-7. 访问API文档
-```
-# 原始API
-http://localhost:8000/docs
-
-# TikHub API服务
-http://localhost:8002/docs
-```
-
-## TikHub API接口说明
-
-### API认证
-
-所有TikHub API请求都需要包含API密钥。在请求头中添加以下字段：
-
-```
-X-API-KEY: 您的TikHub_API密钥
-```
-
-### 1. 视频信息获取
+IVAS-IFM employs a modular microservices architecture:
 
 ```
-GET /api/video/info?url={视频链接}
+┌─────────────────────────┐      ┌─────────────────────────┐      ┌─────────────────────────┐
+│   Platform Adapters     │      │     Core Pipeline       │      │    Analysis Engines     │
+│                         │      │                         │      │                         │
+│ ┌─────────┐ ┌─────────┐│      │ ┌─────────┐ ┌─────────┐│      │ ┌─────────┐ ┌─────────┐│
+│ │ TikTok  │ │ Douyin  ││      │ │Data Pre-│ │Content  ││      │ │ GPT     │ │Sentiment││
+│ │Adapter  │ │Adapter  ││◄────►│ │process  │ │Analysis ││◄────►│ │Engine   │ │Engine   ││
+│ └─────────┘ └─────────┘│      │ └─────────┘ └─────────┘│      │ └─────────┘ └─────────┘│
+│ ┌─────────┐ ┌─────────┐│      │ ┌─────────┐ ┌─────────┐│      │ ┌─────────┐ ┌─────────┐│
+│ │Xiaohong-│ │Other    ││      │ │Media    │ │Data     ││      │ │Trend    │ │Predict  ││
+│ │shu Adptr│ │Platforms││      │ │Process  │ │Storage  ││      │ │Analysis │ │Model    ││
+│ └─────────┘ └─────────┘│      │ └─────────┘ └─────────┘│      │ └─────────┘ └─────────┘│
+└─────────────────────────┘      └─────────────────────────┘      └─────────────────────────┘
+           ▲                               ▲                                ▲
+           │                               │                                │
+           │                               │                                │
+           │                               ▼                                │
+           │                     ┌─────────────────────────┐               │
+           │                     │     Unified API Layer    │               │
+           └─────────────────────┤                         ├───────────────┘
+                                └─────────────────────────┘
+                                           ▲
+                                           │
+                            ┌──────────────┴──────────────┐
+                            │    Application Services      │
+                            │                             │
+                   ┌────────┴────────┐        ┌──────────┴────────┐
+                   │   Web Console   │        │ Integration APIs   │
+                   │                 │        │                    │
+                   └─────────────────┘        └────────────────────┘
 ```
 
-获取指定视频的详细信息，包括标题、描述、作者、统计数据等。
+## 💡 Use Cases
 
-### 2. 无水印视频下载
+### Content Research
+- Cross-platform content trend analysis
+- User behavior pattern studies
+- Content effectiveness evaluation
 
+### Competitive Analysis
+- Competitor content strategy tracking
+- Market share analysis
+- Competitive advantage identification
+
+### Marketing Intelligence
+- Audience preference analysis
+- Content performance prediction
+- Marketing strategy optimization
+
+### Localization Services
+- Multilingual content adaptation
+- Regional content strategy
+- Cultural difference analysis
+
+### Trend Prediction
+- Hot topic prediction
+- Content format evolution
+- User interest shifts
+
+## 🛠️ Technology Stack (Planned)
+
+### Backend Technologies
+- **Core Framework:** 
+  - Python 3.9+ as primary language
+  - FastAPI 0.95+ for high-performance API
+  - Uvicorn as ASGI server
+  - Pydantic for data validation
+
+- **Video Processing:** 
+  - FFmpeg 6.0+ for video transcoding
+  - PyTorch 2.0+ for video analysis
+  - OpenCV-Python for frame processing
+  - MoviePy for video editing
+
+- **AI Models:** 
+  - OpenAI GPT-4 for content understanding
+  - Hugging Face Transformers for NLP
+  - Scikit-learn for ML tasks
+  - TensorFlow for custom model training
+
+- **Data Storage:** 
+  - MongoDB 6.0+ for unstructured data
+  - Redis 7.0+ for caching and queues
+  - PostgreSQL 15+ for structured data
+  - MinIO for object storage
+
+### Frontend Technologies
+- **Framework:** 
+  - Vue.js 3.3+ for UI development
+  - TypeScript 5.0+ for type safety
+  - Vite for build tooling
+  - Vue Router for routing
+
+- **UI Components:** 
+  - Element Plus 2.3+ for base components
+  - TailwindCSS 3.0+ for styling
+  - Headless UI for unstyled components
+  - IconPark for icon system
+
+- **Data Visualization:** 
+  - ECharts 5.4+ for charting
+  - D3.js 7.0+ for custom visualization
+  - AntV for advanced charts
+  - Three.js for 3D rendering
+
+- **State Management:** 
+  - Pinia 2.0+ for state management
+  - VueUse for composition utilities
+  - Mitt for event handling
+
+### Infrastructure
+- **Containerization:** 
+  - Docker CE 24.0+ for containerization
+  - Docker Compose for local development
+  - Buildah for container builds
+
+- **Orchestration:** 
+  - Kubernetes 1.27+ for container orchestration
+  - Helm for package management
+  - Istio for service mesh
+
+- **CI/CD:** 
+  - Jenkins 2.0+ for continuous integration
+  - GitLab CI for code management
+  - ArgoCD for continuous deployment
+
+- **Monitoring:** 
+  - Prometheus for metrics collection
+  - Grafana for monitoring dashboards
+  - ELK Stack for log management
+  - Jaeger for distributed tracing
+
+### Development Tools
+- **IDEs & Editors:**
+  - VSCode for primary development
+  - PyCharm for Python development
+  - WebStorm for frontend development
+
+- **Development Utilities:**
+  - ESLint for code linting
+  - Prettier for code formatting
+  - Black for Python formatting
+  - Commitlint for commit messages
+
+## 🔗 Technology Sources & Open Source References
+
+### Core Dependencies
+- [FastAPI](https://fastapi.tiangolo.com/): High-performance async API framework
+  - Usage: Core API service construction
+  - License: MIT
+  - Version Required: ≥0.95.0
+
+- [Vue.js](https://vuejs.org/): Progressive JavaScript framework
+  - Usage: Frontend interface development
+  - License: MIT
+  - Version Required: ≥3.3.0
+
+- [FFmpeg](https://ffmpeg.org/): Multimedia processing framework
+  - Usage: Video processing and conversion
+  - License: LGPL/GPL
+  - Version Required: ≥6.0
+
+### AI & Machine Learning
+- [OpenAI GPT](https://openai.com/): Large language model
+  - Usage: Content understanding and generation
+  - Note: Requires API key
+  - Pricing: Usage-based
+
+- [Hugging Face](https://huggingface.co/): Open-source AI model community
+  - Usage: Natural language processing
+  - License: Apache 2.0
+  - Key Models: BERT, T5, GPT
+
+### Data Storage & Caching
+- [MongoDB](https://www.mongodb.com/): Document database
+  - Usage: Unstructured data storage
+  - License: SSPL
+  - Version Required: ≥6.0
+
+- [Redis](https://redis.io/): In-memory data store
+  - Usage: Caching and message queues
+  - License: BSD
+  - Version Required: ≥7.0
+
+### Visualization Components
+- [ECharts](https://echarts.apache.org/): Data visualization library
+  - Usage: Chart rendering
+  - License: Apache 2.0
+  - Version Required: ≥5.4.0
+
+- [D3.js](https://d3js.org/): Data-Driven Documents
+  - Usage: Custom visualizations
+  - License: ISC
+  - Version Required: ≥7.0.0
+
+### Video Processing
+- [PyTorch](https://pytorch.org/): Machine learning framework
+  - Usage: Video content analysis
+  - License: BSD
+  - Version Required: ≥2.0.0
+
+- [OpenCV](https://opencv.org/): Computer vision library
+  - Usage: Video frame processing
+  - License: BSD
+  - Version Required: ≥4.8.0
+
+### Third-Party Service Integration
+- [TikHub API](https://www.tikhub.io): Social video platform API service
+  - Usage: Video data retrieval
+  - Authorization: Commercial license required
+  - Pricing: Per-call basis
+
+- [BibiGPT](https://bibigpt.ai): Video content summarization service
+  - Usage: Video content understanding
+  - Authorization: API key required
+  - Integration: REST API
+
+- [KrillinAI](https://krillinai.com): Translation service
+  - Usage: Multilingual content conversion
+  - Authorization: Commercial license required
+  - Integration: SDK/API
+
+### Development Standards & Best Practices
+- Code Style Guidelines:
+  - Python: PEP 8
+  - JavaScript/TypeScript: Airbnb Style Guide
+  - Vue: Vue Style Guide
+
+- Version Control:
+  - Git Flow workflow
+  - Semantic Versioning
+  - Conventional Commits
+
+- Documentation Standards:
+  - OpenAPI/Swagger Specification
+  - JSDoc Documentation
+  - TypeDoc Generation
+
+## 🚀 Development Roadmap
+
+### Phase 1: Foundation (1-2 months)
+- [x] System architecture design
+- [ ] Core module planning
+- [ ] Technology stack selection
+- [ ] Development environment setup
+
+### Phase 2: Platform Integration (2-3 months)
+- [ ] TikTok adapter development
+- [ ] Douyin adapter development
+- [ ] Xiaohongshu adapter development
+- [ ] Unified API design
+
+### Phase 3: Core Features (3-4 months)
+- [ ] Data collection module
+- [ ] Content analysis engine
+- [ ] Data storage system
+- [ ] Basic API implementation
+
+### Phase 4: Advanced Features (2-3 months)
+- [ ] AI model integration
+- [ ] Multilingual processing
+- [ ] Trend analysis system
+- [ ] Automated workflows
+
+### Phase 5: User Interface (2-3 months)
+- [ ] Web console development
+- [ ] Data visualization
+- [ ] User permission system
+- [ ] System configuration interface
+
+### Phase 6: Optimization & Deployment (1-2 months)
+- [ ] Performance optimization
+- [ ] Security hardening
+- [ ] Deployment strategy
+- [ ] Monitoring system
+
+## 🔗 Technical References
+
+This concept project draws inspiration from the following excellent projects and technologies:
+
+- [TikHub API](https://www.tikhub.io): Professional social video platform API service
+- [BibiGPT](https://bibigpt.ai): Advanced video content summarization technology
+- [KrillinAI](https://krillinai.com): Professional translation services
+
+## 👥 Concept Team
+
+### Core Development
+- Backend Architect
+- Frontend Engineer
+- AI Algorithm Expert
+- Data Engineer
+
+### Product Design
+- Product Manager
+- UI/UX Designer
+- User Researcher
+
+### Operations
+- DevOps Engineer
+- System Architect
+- Security Expert
+
+## 📄 License
+
+This concept project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+---
+
+<div align="center">
+  <sub>A concept design by IVAS Team</sub>
+</div>
+
+## 💫 Interface Design Preview
+
+### Login Interface Design
+```ascii
+┌─────────────────────────────── IVAS-IFM Analysis System ───────────────────────────────┐
+│                                                                                         │
+│                                    [System Logo]                                        │
+│                                                                                         │
+│                        Intelligent Video Analysis Platform                              │
+│                                                                                         │
+│                    ┌──────────────────────────────────────┐                            │
+│                    │         📧 Email/Username             │                            │
+│                    └──────────────────────────────────────┘                            │
+│                                                                                         │
+│                    ┌──────────────────────────────────────┐                            │
+│                    │         🔒 Password                   │                            │
+│                    └──────────────────────────────────────┘                            │
+│                                                                                         │
+│                    ┌──────────────────────────────────────┐                            │
+│                    │         🔐 2FA Code                   │                            │
+│                    └──────────────────────────────────────┘                            │
+│                                                                                         │
+│                    ┌──────────────────────────────────────┐                            │
+│                    │            Sign In                    │                            │
+│                    └──────────────────────────────────────┘                            │
+│                                                                                         │
+│                    [ ] Remember me  |  Forgot Password?  |  Register                    │
+│                                                                                         │
+│                         OAuth 2.0 Third-party Login                                     │
+│                    [GitHub] [Google] [Microsoft] [Enterprise]                           │
+│                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
 ```
-GET /api/video/download?url={视频链接}
+
+### Main Interface Design
+```ascii
+┌─────────────────────────────── IVAS-IFM Console ──────────────────────────────────┐
+│ ┌─────────┐ Username [▼]                                        [Alerts] [Settings] │
+│ │   Logo  │                                                                        │
+│ └─────────┘                                                                        │
+├─────────────┬──────────────────────────────────────────────────────────────────────┤
+│             │                     Dashboard Overview                                │
+│  📊 Dashboard│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐   │
+│  📹 Videos   │  │ Total Videos│ │Processed    │ │Storage Used │ │API Calls    │   │
+│  🎯 Tasks    │  │ 12,345      │ │Today: 1,234 │ │1.2 TB      │ │89,012       │   │
+│  📈 Analytics│  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘   │
+│  🔍 Search   │                                                                      │
+│  🛠️ Settings │     ┌────────────── Platform Distribution ─────────────┐            │
+│             │     │                                                   │            │
+│             │     │      TikTok   ███████████   45%                  │            │
+│             │     │      Douyin   ████████      32%                  │            │
+│             │     │      RED      █████         23%                  │            │
+│             │     │                                                   │            │
+│             │     └───────────────────────────────────────────────────┘            │
+│             │                                                                      │
+│             │  Recently Processed Videos                                          │
+│             │  ┌────────────────────────────────────────────────────────────┐    │
+│             │  │ ID        Platform Status   Length   Time      Actions     │    │
+│             │  │ VID-001   TikTok   ✓Done    2:30     12:30    [View][Export]│    │
+│             │  │ VID-002   Douyin   ⟳Process 1:45     12:25    [View]      │    │
+│             │  │ VID-003   RED      ✓Done    3:15     12:20    [View][Export]│    │
+│             │  └────────────────────────────────────────────────────────────┘    │
+│             │                                                                      │
+│             │  System Status                                                      │
+│             │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐                   │
+│             │  │ CPU: 32%    │ │ RAM: 45%    │ │ Queue: 12   │                   │
+│             │  └─────────────┘ └─────────────┘ └─────────────┘                   │
+│             │                                                                      │
+└─────────────┴──────────────────────────────────────────────────────────────────────┘
 ```
 
-获取指定视频的无水印下载链接。
-
-### 3. 抖音视频解析
-
-```
-GET /api/douyin/video?url={抖音视频链接}
-```
-
-解析抖音视频信息。
-
-### 4. TikTok视频解析
-
-```
-GET /api/tiktok/video?url={TikTok视频链接}
-```
-
-解析TikTok视频信息。
-
-### 5. 小红书笔记解析
-
-```
-GET /api/xiaohongshu/post?url={小红书笔记链接}
-```
-
-解析小红书笔记信息。
-
-### 6. 混合解析（自动识别平台）
-
-```
-GET /api/hybrid/parse?url={任何支持平台的链接}
-```
-
-自动识别链接类型并解析相应平台的内容信息，支持抖音、TikTok、小红书等多个平台。
-
-## 测试TikHub API
-
-使用提供的测试脚本来测试TikHub API功能：
-
-### 测试所有端点
-
-```bash
-python test_all_endpoints.py --all
+### Video Analysis Interface
+```ascii
+┌──────────────────────────── Video Content Analysis ────────────────────────────┐
+│                                                                                │
+│  Video ID: VID-001                                      Export | Share         │
+│  ┌─────────────────────────┐  ┌───────────────────────────────────┐           │
+│  │                         │  │ Video Information                  │           │
+│  │                         │  │ Title: 2024 Product Unboxing      │           │
+│  │     Video Preview      │  │ Duration: 2:30                     │           │
+│  │                         │  │ Platform: TikTok                   │           │
+│  │                         │  │ Published: 2024-01-20 15:30       │           │
+│  │                         │  │                                    │           │
+│  └─────────────────────────┘  │ Engagement Metrics                 │           │
+│                               │ 👍 Likes: 12.5K                    │           │
+│  [◀️] [⏯️] [▶️] [🔊] [-][+]    │ 💬 Comments: 1.2K                 │           │
+│                               │ 🔄 Shares: 3.4K                    │           │
+│  ┌─────────────────────────┐  └───────────────────────────────────┘           │
+│  │ AI Analysis Results     │                                                   │
+│  │                         │  ┌───────────────────────────────────┐           │
+│  │ 🎯 Type: Product Review │  │ 🔍 Keyword Analysis               │           │
+│  │ 😊 Sentiment: Positive  │  │ #unboxing #tech #digital #phone   │           │
+│  │ 👥 Audience: 18-34      │  │                                   │           │
+│  │ 📈 Viral Potential: High│  │ 📊 Trend Analysis                 │           │
+│  │                         │  │ [Trend Chart]                     │           │
+│  └─────────────────────────┘  └───────────────────────────────────┘           │
+│                                                                                │
+│  📝 AI Generated Summary                                                       │
+│  The video showcases the unboxing of a new phone model, highlighting its      │
+│  design, performance features, and user experience. Comment section shows      │
+│  positive engagement, with users particularly interested in innovative features.│
+│                                                                                │
+│  💡 Optimization Suggestions                                                   │
+│  1. Consider adding product specification comparisons at the start             │
+│  2. Include more real-world usage scenarios                                    │
+│  3. Add pricing and promotional information to improve conversion              │
+│                                                                                │
+└────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 测试特定端点
+These interface designs showcase the system's main functionalities and user interaction flows:
 
-```bash
-# 测试基本端点
-python test_all_endpoints.py --basic
+1. **Login Interface Features:**
+   - Multiple authentication methods
+   - Two-factor authentication security
+   - Clean, modern design aesthetic
+   - Complete user authentication flow
 
-# 测试抖音视频
-python test_all_endpoints.py --douyin
+2. **Main Interface Features:**
+   - Clear data overview
+   - Intuitive data visualization
+   - Real-time system monitoring
+   - Efficient video management
 
-# 测试TikTok视频
-python test_all_endpoints.py --tiktok
+3. **Video Analysis Interface Features:**
+   - Integrated video player
+   - Real-time analytics display
+   - AI analysis visualization
+   - Detailed optimization insights
 
-# 测试小红书笔记
-python test_all_endpoints.py --xiaohongshu
+These interface designs adhere to modern UI/UX principles, emphasizing:
+- User experience fluidity
+- Information hierarchy
+- Operational efficiency
+- Modular functionality 
 
-# 测试混合解析端点
-python test_all_endpoints.py --hybrid
+## 🎨 Design Resources
+
+### Logo Design Concept
+
+```ascii
+Main Logo:
+
+    ╭────────────╮
+    │   IVAS    │
+    │    ╭─╮    │
+    │ ▶──┤I├──▶ │
+    │    ╰─╯    │
+    │    IFM    │
+    ╰────────────╯
+
+Icon Variants:
+
+   ┌─────┐ ┌─────┐ ┌─────┐
+   │ 🎥 │ │ 🤖 │ │ 📊 │
+   │ Vid │ │ AI  │ │ Ana │
+   └─────┘ └─────┘ └─────┘
 ```
 
-### 直接测试TikHub API
+#### Logo Design Philosophy
+- **Core Elements:** Video Stream Processing (▶), AI Analysis (I), Data Flow Transformation (▶)
+- **Color Scheme:** 
+  - Primary: #2B5BE2 (Tech Blue)
+  - Secondary: #34C759 (Vibrant Green)
+  - Accent: #FF3B30 (Alert Red)
+- **Typography:** 
+  - Headings: Montserrat Bold
+  - Body: Roboto Regular
 
-```bash
-python test_direct_api.py
+### AI-Generated Visual Designs
+
+#### 1. Data Visualization Theme
+```ascii
+┌────────────────────────────┐
+│    Data Flow Display      │
+│  ╭──────────────────╮     │
+│  │   ▂▃▅▇█▇▅▃▂    │     │
+│  │  ◉ Live Data   ◉  │     │
+│  │   ▂▃▅▇█▇▅▃▂    │     │
+│  ╰──────────────────╯     │
+│                           │
+│    [Wave Form Example]    │
+└────────────────────────────┘
 ```
 
-## API接口说明
-
-### 1. 视频信息获取
-
-```
-GET /api/video/info?url={视频链接}
-```
-
-获取指定视频的详细信息，包括标题、描述、作者、统计数据等。
-
-### 2. 无水印视频下载
-
-```
-GET /api/video/download?url={视频链接}
+#### 2. AI Engine Visualization
+```ascii
+┌────────────────────────────┐
+│   Neural Network Display   │
+│                           │
+│    ○ ○ ○ ○   Input       │
+│     ╲│╱│╲│╱              │
+│    ○ ○ ○ ○   Hidden      │
+│     ╲│╱│╲│╱              │
+│    ○ ○ ○ ○   Output      │
+│                           │
+└────────────────────────────┘
 ```
 
-获取指定视频的无水印下载链接。
-
-### 3. 视频内容摘要
-
-```
-GET /api/video/summary?url={视频链接}
-```
-
-获取指定视频的内容摘要。
-
-### 4. 视频文本翻译
-
-```
-POST /api/video/translate
-```
-
-请求体示例:
-```json
-{
-  "text": "要翻译的文本",
-  "source_language": "zh",
-  "target_language": "en"
-}
+#### 3. UI Theme Elements
+```ascii
+┌────────────────────────────┐
+│  Modern Minimal Controls   │
+│  ╭──────────────────╮     │
+│  │ ⚫ ⚪ ⚪  Tabs   │     │
+│  ╰──────────────────╯     │
+│  ┌──────────────────┐     │
+│  │ 🔍 Search        │     │
+│  └──────────────────┘     │
+│  ╔══════════════════╗     │
+│  ║ 📊 Data Card     ║     │
+│  ╚══════════════════╝     │
+└────────────────────────────┘
 ```
 
-将视频相关文本从源语言翻译到目标语言。
+### Design Guidelines
 
-## 测试
+#### 1. Color System
+```ascii
+Primary Colors:
+┌─────────┐ ┌─────────┐ ┌─────────┐
+│ #2B5BE2 │ │ #34C759 │ │ #FF3B30 │
+│ Tech    │ │ Vibrant │ │ Alert   │
+│ Blue    │ │ Green   │ │ Red     │
+└─────────┘ └─────────┘ └─────────┘
 
-使用提供的测试脚本来测试API功能：
-
-```bash
-# 测试原始API
-python test_api.py
-
-# 测试TikHub API
-python test_all_endpoints.py
+Gradient Scheme:
+┌───────────────────────────┐
+│ Blue Gradient            │
+│ #2B5BE2 ──→ #1E88E5     │
+└───────────────────────────┘
 ```
 
-## 进阶配置
+#### 2. Typography System
+```ascii
+Heading Hierarchy:
+┌────────────────────┐
+│ H1: Montserrat 24px│
+│ H2: Montserrat 20px│
+│ H3: Montserrat 18px│
+└────────────────────┘
 
-### 整合更多功能
-
-要整合更多功能，可以参考以下开源项目:
-
-1. **KrillinAI** (翻译和配音功能): <https://github.com/krillinai/KrillinAI>
-2. **BibiGPT** (内容理解和摘要): <https://github.com/JimmyLv/BibiGPT-v1>
-
-### 自定义配置
-
-可以在`app.py`中修改相关配置，例如:
-
-- 调整API端点
-- 更改日志级别
-- 添加自定义中间件
-
-## 详细文档
-
-更多详细使用说明请参阅：
-
-- [TikHub API 集成使用指南](TIKHUB_API_USAGE.md)
-- [TikHub API 集成实现文档](TIKHUB_INTEGRATION.md)
-
-## 注意事项
-
-- 本项目仅供学习和研究使用
-- 请确保您使用的TikHub API密钥有效
-- 使用时请遵守相关平台的使用条款和政策
-
-# TikHub API 集成项目
-
-这个项目提供了与TikHub API的集成，让您可以轻松地访问和使用TikTok、抖音、小红书等平台的数据。
-
-## 功能特点
-
-- 多平台支持：支持TikTok、抖音、小红书等多个平台
-- 视频解析：解析视频链接，获取视频信息、下载链接等
-- 视频下载：直接下载视频到本地
-- 搜索功能：搜索视频和用户信息
-- 用户数据：获取用户信息、视频列表、粉丝列表等
-- 评论数据：获取视频评论
-
-## 安装和配置
-
-### 环境要求
-
-- Python 3.7+
-- 有效的TikHub API密钥
-
-### 安装步骤
-
-1. 安装依赖包：
-
-```bash
-pip install -r requirements.txt
+Body Text:
+┌────────────────────┐
+│ P: Roboto 14px    │
+│ Small: Roboto 12px│
+└────────────────────┘
 ```
 
-2. 配置API密钥：
+#### 3. Icon System
+```ascii
+Base Icon Set:
+┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐
+│ 📊 │ │ 📈 │ │ 📱 │ │ 💡 │
+└─────┘ └─────┘ └─────┘ └─────┘
 
-将您的TikHub API密钥添加到`config.json`文件中：
-
-```json
-{
-  "tikhub_api_key": "您的API密钥"
-}
+Function Icons:
+┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐
+│ ⚙️  │ │ 🔍 │ │ ⭐ │ │ 📥 │
+└─────┘ └─────┘ └─────┘ └─────┘
 ```
 
-## 使用方法
+### Design Applications
 
-### 启动本地API服务
-
-```bash
-python run_tikhub_api_updated.py
+#### 1. Mobile Adaptation
+```ascii
+┌─────────────────┐
+│   📱 Mobile    │
+│ ┌───────────┐  │
+│ │ IVAS Logo │  │
+│ └───────────┘  │
+│ ┌───────────┐  │
+│ │Quick Acts │  │
+│ └───────────┘  │
+└─────────────────┘
 ```
 
-这将启动本地API服务在端口8002上。
-
-### 使用命令行工具
-
-示例应用提供了命令行接口，可以轻松使用主要功能：
-
-```bash
-# 解析视频链接
-python example_app.py parse https://www.tiktok.com/@example/video/1234567890
-
-# 获取视频信息
-python example_app.py info --platform tiktok --video-id 1234567890
-
-# 搜索视频
-python example_app.py search-videos --platform tiktok --keyword "dance" --count 10
-
-# 下载视频
-python example_app.py download --url https://www.tiktok.com/@example/video/1234567890 --output downloads
+#### 2. Large Screen Display
+```ascii
+┌────────────────────────────────┐
+│        📺 Data Wall           │
+│    ┌──────┐  ┌──────┐        │
+│    │Data 1│  │Data 2│        │
+│    └──────┘  └──────┘        │
+│    ┌──────────────────┐      │
+│    │   Trend Chart    │      │
+│    └──────────────────┘      │
+└────────────────────────────────┘
 ```
 
-### 启动Web应用
-
-项目还提供了一个Web界面，方便使用各种功能：
-
-```bash
-python web_app.py
+#### 3. Print Materials
+```ascii
+┌────────────────────┐
+│  🖨️ Business Card │
+│ ┌────────────────┐ │
+│ │    IVAS-IFM   │ │
+│ │ ────────────  │ │
+│ │   Contact     │ │
+│ └────────────────┘ │
+└────────────────────┘
 ```
 
-然后在浏览器中访问 http://localhost:8000 即可使用Web界面。
+### Design Resources Download
 
-### 编程接口
+> Note: The following design resources will be available during project development
 
-您也可以在自己的代码中直接使用TikHub接口：
+- Logo Package (AI/SVG/PNG)
+- Color Schemes (Adobe/Sketch)
+- UI Component Library (Figma)
+- Icon Set (SVG/Icon Font)
+- Design Guidelines (PDF)
 
-```python
-from tikhub_interface import TikHubInterface
+### Brand Identity Guidelines
 
-# 初始化接口
-tikhub = TikHubInterface(api_key="您的API密钥")
+#### 1. Logo Usage Guidelines
+- Minimum size: 24px
+- Safe space: 1/4 of logo height
+- No distortion or color changes
+- Prefer vector formats
 
-# 解析视频链接
-result = tikhub.parse_url("https://www.tiktok.com/@example/video/1234567890")
-print(result)
+#### 2. Brand Color Guidelines
+- Primary colors for key information and CTAs
+- Secondary colors for supporting info and charts
+- Ensure color contrast meets WCAG 2.0 standards
 
-# 下载视频
-tikhub.download_video_sync("https://www.tiktok.com/@example/video/1234567890", "downloads")
-```
-
-## 接口文档
-
-详细的API使用说明请参考TikHub官方文档：https://github.com/TikHub/TikHub-API-Python-SDK-V2
-
-## 注意事项
-
-- 确保您有有效的TikHub API密钥
-- 使用API时注意遵守平台的使用条款和限制
-- 如遇到API请求失败，可能是远程API有所变化，请检查最新的TikHub文档 
+#### 3. Typography Guidelines
+- Headings in Montserrat Bold
+- Body text in Roboto Regular
+- Line height 1.5x font size
+- Paragraph spacing 1.5x line height 
