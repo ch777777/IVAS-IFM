@@ -1,0 +1,23 @@
+# Core dependencies
+fastapi>=0.68.0
+uvicorn>=0.15.0
+httpx>=0.23.0
+pydantic>=1.9.0
+python-multipart>=0.0.5
+aiofiles>=0.8.0
+
+# TikHub integration
+requests>=2.27.1
+asyncio>=3.4.3
+
+# BibiGPT and KrillinAI integration
+requests>=2.27.1
+
+# Web interface
+jinja2>=3.0.3
+bootstrap-flask>=2.0.2
+
+# Development tools
+pytest>=7.0.0
+black>=22.1.0
+isort>=5.10.1 

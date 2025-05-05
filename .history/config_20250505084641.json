@@ -1,0 +1,8 @@
+{
+    "tikhub_api_key": "0KMsWDohw2EtvSsxjmmtwUM33yUYhKD84a108Gz4mUZT0XUIIMJ/nDGNIg==",
+    "bibigpt_api_key": "your_bibigpt_api_key_here",
+    "krillinai_api_key": "your_krillinai_api_key_here",
+    "bibigpt_api_url": "https://api.bibigpt.ai/v1/summarize",
+    "krillinai_api_url": "https://api.krillinai.com/v1/translate",
+    "tikhub_api_url": "http://localhost:8002"
+} 

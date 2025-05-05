@@ -1,0 +1,71 @@
+# 核心依赖
+requests>=2.28.1
+beautifulsoup4>=4.11.1
+pytube>=12.1.0
+selenium>=4.5.0
+webdriver-manager>=3.8.4
+pyexecjs>=1.5.1
+
+# 多模态识别依赖
+torch>=1.12.1
+torchvision>=0.13.1
+ultralytics>=8.0.0
+transformers>=4.21.1
+
+# 语义分析依赖
+jieba>=0.42.1
+nltk>=3.7
+sentence-transformers>=2.2.2
+
+# 可选依赖
+opencv-python>=4.6.0
+pillow>=9.2.0
+pandas>=1.5.0
+matplotlib>=3.6.0
+
+# 打包依赖
+pyinstaller==6.3.0
+setuptools==69.1.1
+numpy==1.24.3
+elasticsearch==8.12.0
+pyyaml==6.0.2
+tqdm==4.67.1
+scikit-learn==1.6.1
+
+# 集成API依赖 (需单独安装)
+# facebook-downloader - 请使用 pip install facebook-downloader 安装
+# douyin-tiktok-scraper - 请使用 pip install git+https://github.com/Evil0ctal/Douyin_TikTok_Download_API.git 安装
+fake_useragent>=1.1.1
+
+# 基础依赖
+aiohttp>=3.8.0
+aiofiles>=0.8.0
+asyncio>=3.4.3
+
+# 视频处理
+moviepy>=1.0.3
+yt-dlp>=2023.3.4
+
+# 图像识别
+torch>=1.13.1
+torchvision>=0.14.1
+transformers>=4.26.1
+clip>=1.0
+
+# 工具包
+python-dotenv>=0.21.0
+tqdm>=4.65.0
+requests>=2.28.2
+beautifulsoup4>=4.11.2
+lxml>=4.9.2
+
+# 测试工具
+pytest>=7.3.1
+pytest-asyncio>=0.21.0
+pytest-cov>=4.0.0
+
+# 开发工具
+black>=23.1.0
+isort>=5.12.0
+flake8>=6.0.0
+mypy>=1.2.0 

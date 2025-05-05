@@ -1,0 +1,22 @@
+2025-05-05 07:28:05,793 - run - INFO - 启动 IVAS-IFM 系统...
+2025-05-05 07:28:05,794 - run - INFO - 使用 exe_project/fixed_main.py 启动系统
+2025-05-05 07:28:05,883 - run - ERROR - 启动系统时出错: Command '['C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python310\\python.exe', 'C:\\unbeknown\\exe_project\\fixed_main.py']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "C:\unbeknown\run.py", line 55, in main
+    result = subprocess.run([sys.executable, str(fixed_main_path)], check=True)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python310\\python.exe', 'C:\\unbeknown\\exe_project\\fixed_main.py']' returned non-zero exit status 1.
+2025-05-05 07:29:23,323 - run - INFO - 启动 IVAS-IFM 系统...
+2025-05-05 07:29:23,324 - run - INFO - 使用 exe_project/fixed_main.py 启动系统
+2025-05-05 07:29:23,457 - run - ERROR - 启动系统时出错: Command '['C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python310\\python.exe', 'C:\\unbeknown\\exe_project\\fixed_main.py']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "C:\unbeknown\run.py", line 55, in main
+    result = subprocess.run([sys.executable, str(fixed_main_path)], check=True)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python310\\python.exe', 'C:\\unbeknown\\exe_project\\fixed_main.py']' returned non-zero exit status 1.
+2025-05-05 07:30:22,504 - run - INFO - 启动 IVAS-IFM 系统...
+2025-05-05 07:30:22,505 - run - INFO - 使用 exe_project/fixed_main.py 启动系统
+2025-05-05 07:30:52,435 - run - INFO - 启动 IVAS-IFM 系统...
+2025-05-05 07:30:52,436 - run - INFO - 使用 exe_project/fixed_main.py 启动系统

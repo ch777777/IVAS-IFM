@@ -1,0 +1,3 @@
+@echo off
+echo Starting IVAS-IFM Application...
+python src/main.py 

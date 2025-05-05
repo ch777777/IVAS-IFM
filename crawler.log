@@ -1,0 +1,161 @@
+2025-05-05 04:26:08,171 [INFO] multi_crawler: 开始搜索，关键词: climate change, 平台: ['facebook']
+2025-05-05 04:26:08,377 [ERROR] src.modules.vca.crawler_manager: 加载平台适配器 bilibili 失败: 请安装必要的依赖: pip install requests beautifulsoup4 pyexecjs
+2025-05-05 04:26:08,513 [INFO] src.modules.vca.crawler_manager: 已注册平台适配器: facebook
+2025-05-05 04:26:08,518 [INFO] src.modules.vca.crawler_manager: 已注册平台适配器: tiktok
+2025-05-05 04:26:08,521 [INFO] src.modules.vca.crawler_manager: 已注册平台适配器: weibo
+2025-05-05 04:26:08,525 [ERROR] src.modules.vca.crawler_manager: 加载平台适配器 youtube 失败: 请安装pytube和requests库: pip install pytube requests
+2025-05-05 04:26:08,526 [INFO] src.modules.vca.crawler_manager: 共加载了 3 个平台适配器
+2025-05-05 04:26:08,526 [INFO] multi_crawler: 加载了 3 个平台适配器
+2025-05-05 04:26:08,526 [INFO] multi_crawler: 支持的平台: ['facebook', 'tiktok', 'weibo']
+2025-05-05 04:26:08,526 [WARNING] src.modules.vca.crawler_manager: 平台 facebook 适配器已存在，将被覆盖
+2025-05-05 04:26:08,526 [INFO] src.modules.vca.crawler_manager: 已注册平台适配器: facebook
+2025-05-05 04:26:08,527 [INFO] WDM: ====== WebDriver manager ======
+2025-05-05 04:26:10,680 [INFO] WDM: Get LATEST chromedriver version for google-chrome
+2025-05-05 04:26:10,839 [INFO] WDM: Get LATEST chromedriver version for google-chrome
+2025-05-05 04:26:10,987 [INFO] WDM: Driver [C:\Users\Admin\.wdm\drivers\chromedriver\win64\136.0.7103.49\chromedriver-win32/chromedriver.exe] found in cache
+2025-05-05 04:26:11,869 [INFO] src.modules.vca.platform_adapters.facebook: Selenium WebDriver初始化成功
+2025-05-05 04:26:11,869 [INFO] src.modules.vca.platform_adapters.facebook: Facebook适配器已初始化
+2025-05-05 04:26:11,870 [INFO] src.modules.vca.platform_adapters.facebook: 搜索Facebook视频: climate change, 限制: 2
+2025-05-05 04:26:16,020 [ERROR] src.modules.vca.platform_adapters.facebook: 提取视频元素 0 信息失败: Message: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='/watch/']"}
+  (Session info: chrome=136.0.7103.48); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0063FBD3+61635]
+	GetHandleVerifier [0x0063FC14+61700]
+	(No symbol) [0x004605D3]
+	(No symbol) [0x004A899E]
+	(No symbol) [0x004A8D3B]
+	(No symbol) [0x0049E111]
+	(No symbol) [0x004CD2E4]
+	(No symbol) [0x0049E034]
+	(No symbol) [0x004CD514]
+	(No symbol) [0x004EE61B]
+	(No symbol) [0x004CD096]
+	(No symbol) [0x0049C840]
+	(No symbol) [0x0049D6A4]
+	GetHandleVerifier [0x00887043+2450739]
+	GetHandleVerifier [0x008827C6+2432182]
+	GetHandleVerifier [0x0089D50E+2542078]
+	GetHandleVerifier [0x00656895+155013]
+	GetHandleVerifier [0x0065CF7D+181357]
+	GetHandleVerifier [0x00647428+92440]
+	GetHandleVerifier [0x006475D0+92864]
+	GetHandleVerifier [0x00631FC0+5296]
+	BaseThreadInitThunk [0x7782FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77A780CE+286]
+	RtlGetAppContainerNamedObjectPath [0x77A7809E+238]
+
+2025-05-05 04:26:16,022 [INFO] src.modules.vca.platform_adapters.facebook: 搜索完成，找到 0 个结果
+2025-05-05 04:26:16,023 [INFO] src.modules.vca.crawler_manager: 任务 facebook_climate change_2 完成，获取到 0 个结果
+2025-05-05 04:26:16,023 [INFO] multi_crawler: 平台 facebook 找到 0 个结果
+2025-05-05 04:26:16,023 [INFO] multi_crawler: 多平台搜索完成
+2025-05-05 04:26:16,023 [INFO] src.modules.vca.crawler_manager: 爬虫管理器已关闭
+2025-05-05 04:26:29,384 [INFO] multi_crawler: 开始搜索，关键词: climate change, 平台: ['facebook', 'youtube', 'bilibili', 'tiktok', 'weibo']
+2025-05-05 04:26:29,729 [INFO] src.modules.vca.crawler_manager: 已注册平台适配器: bilibili
+2025-05-05 04:26:29,855 [INFO] src.modules.vca.crawler_manager: 已注册平台适配器: facebook
+2025-05-05 04:26:29,860 [INFO] src.modules.vca.crawler_manager: 已注册平台适配器: tiktok
+2025-05-05 04:26:29,864 [INFO] src.modules.vca.crawler_manager: 已注册平台适配器: weibo
+2025-05-05 04:26:29,888 [INFO] src.modules.vca.crawler_manager: 已注册平台适配器: youtube
+2025-05-05 04:26:29,889 [INFO] src.modules.vca.crawler_manager: 共加载了 5 个平台适配器
+2025-05-05 04:26:29,889 [INFO] multi_crawler: 加载了 5 个平台适配器
+2025-05-05 04:26:29,889 [INFO] multi_crawler: 支持的平台: ['bilibili', 'facebook', 'tiktok', 'weibo', 'youtube']
+2025-05-05 04:26:29,889 [WARNING] src.modules.vca.crawler_manager: 平台 tiktok 适配器已存在，将被覆盖
+2025-05-05 04:26:29,889 [INFO] src.modules.vca.crawler_manager: 已注册平台适配器: tiktok
+2025-05-05 04:26:29,889 [WARNING] src.modules.vca.crawler_manager: 平台 facebook 适配器已存在，将被覆盖
+2025-05-05 04:26:29,890 [INFO] src.modules.vca.crawler_manager: 已注册平台适配器: facebook
+2025-05-05 04:26:29,890 [INFO] WDM: ====== WebDriver manager ======
+2025-05-05 04:26:32,051 [INFO] WDM: Get LATEST chromedriver version for google-chrome
+2025-05-05 04:26:32,237 [INFO] WDM: Get LATEST chromedriver version for google-chrome
+2025-05-05 04:26:32,403 [INFO] WDM: Driver [C:\Users\Admin\.wdm\drivers\chromedriver\win64\136.0.7103.49\chromedriver-win32/chromedriver.exe] found in cache
+2025-05-05 04:26:33,284 [INFO] src.modules.vca.platform_adapters.facebook: Selenium WebDriver初始化成功
+2025-05-05 04:26:33,285 [INFO] src.modules.vca.platform_adapters.facebook: Facebook适配器已初始化
+2025-05-05 04:26:33,286 [INFO] src.modules.vca.platform_adapters.facebook: 搜索Facebook视频: climate change, 限制: 2
+2025-05-05 04:26:36,871 [ERROR] src.modules.vca.platform_adapters.facebook: 提取视频元素 0 信息失败: Message: no such element: Unable to locate element: {"method":"css selector","selector":"a[href*='/watch/']"}
+  (Session info: chrome=136.0.7103.48); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0063FBD3+61635]
+	GetHandleVerifier [0x0063FC14+61700]
+	(No symbol) [0x004605D3]
+	(No symbol) [0x004A899E]
+	(No symbol) [0x004A8D3B]
+	(No symbol) [0x0049E111]
+	(No symbol) [0x004CD2E4]
+	(No symbol) [0x0049E034]
+	(No symbol) [0x004CD514]
+	(No symbol) [0x004EE61B]
+	(No symbol) [0x004CD096]
+	(No symbol) [0x0049C840]
+	(No symbol) [0x0049D6A4]
+	GetHandleVerifier [0x00887043+2450739]
+	GetHandleVerifier [0x008827C6+2432182]
+	GetHandleVerifier [0x0089D50E+2542078]
+	GetHandleVerifier [0x00656895+155013]
+	GetHandleVerifier [0x0065CF7D+181357]
+	GetHandleVerifier [0x00647428+92440]
+	GetHandleVerifier [0x006475D0+92864]
+	GetHandleVerifier [0x00631FC0+5296]
+	BaseThreadInitThunk [0x7782FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77A780CE+286]
+	RtlGetAppContainerNamedObjectPath [0x77A7809E+238]
+
+2025-05-05 04:26:36,874 [INFO] src.modules.vca.platform_adapters.facebook: 搜索完成，找到 0 个结果
+2025-05-05 04:26:36,874 [INFO] src.modules.vca.crawler_manager: 任务 facebook_climate change_2 完成，获取到 0 个结果
+2025-05-05 04:26:36,875 [INFO] src.modules.vca.platform_adapters.youtube: YouTube适配器已初始化
+2025-05-05 04:26:36,875 [INFO] src.modules.vca.platform_adapters.youtube: 搜索YouTube视频: climate change, 限制: 2
+2025-05-05 04:26:38,623 [WARNING] pytube.contrib.search: Unexpected renderer encountered.
+2025-05-05 04:26:38,623 [WARNING] pytube.contrib.search: Renderer name: dict_keys(['infoPanelContainerRenderer'])
+2025-05-05 04:26:38,623 [WARNING] pytube.contrib.search: Search term: climate change
+2025-05-05 04:26:38,623 [WARNING] pytube.contrib.search: Please open an issue at https://github.com/pytube/pytube/issues and provide this log output.
+2025-05-05 04:26:38,838 [ERROR] src.modules.vca.platform_adapters.youtube: 提取视频信息失败: HTTP Error 400: Bad Request
+2025-05-05 04:26:39,051 [ERROR] src.modules.vca.platform_adapters.youtube: 提取视频信息失败: HTTP Error 400: Bad Request
+2025-05-05 04:26:39,052 [INFO] src.modules.vca.platform_adapters.youtube: 搜索完成，找到 0 个结果
+2025-05-05 04:26:39,053 [INFO] src.modules.vca.crawler_manager: 任务 youtube_climate change_2 完成，获取到 0 个结果
+2025-05-05 04:26:39,053 [INFO] src.modules.vca.platform_adapters.bilibili: Bilibili适配器已初始化
+2025-05-05 04:26:39,053 [INFO] src.modules.vca.platform_adapters.bilibili: 搜索Bilibili视频: climate change, 限制: 2
+2025-05-05 04:26:39,264 [ERROR] src.modules.vca.platform_adapters.bilibili: 搜索页面失败: Expecting value: line 1 column 1 (char 0)
+2025-05-05 04:26:39,265 [INFO] src.modules.vca.platform_adapters.bilibili: 搜索完成，找到 0 个结果
+2025-05-05 04:26:39,265 [INFO] src.modules.vca.crawler_manager: 任务 bilibili_climate change_2 完成，获取到 0 个结果
+2025-05-05 04:26:39,266 [INFO] WDM: ====== WebDriver manager ======
+2025-05-05 04:26:41,420 [INFO] WDM: Get LATEST chromedriver version for google-chrome
+2025-05-05 04:26:41,590 [INFO] WDM: Get LATEST chromedriver version for google-chrome
+2025-05-05 04:26:41,767 [INFO] WDM: Driver [C:\Users\Admin\.wdm\drivers\chromedriver\win64\136.0.7103.49\chromedriver-win32/chromedriver.exe] found in cache
+2025-05-05 04:26:42,166 [INFO] src.modules.vca.platform_adapters.tiktok: Selenium WebDriver初始化成功
+2025-05-05 04:26:42,167 [INFO] src.modules.vca.platform_adapters.tiktok: TikTok适配器已初始化
+2025-05-05 04:26:42,167 [INFO] src.modules.vca.platform_adapters.tiktok: 搜索TikTok视频: climate change, 限制: 2
+2025-05-05 04:27:03,502 [ERROR] src.modules.vca.platform_adapters.tiktok: Selenium搜索失败: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0063FBD3+61635]
+	GetHandleVerifier [0x0063FC14+61700]
+	(No symbol) [0x004605D3]
+	(No symbol) [0x004A899E]
+	(No symbol) [0x004A8D3B]
+	(No symbol) [0x004F0E12]
+	(No symbol) [0x004CD2E4]
+	(No symbol) [0x004EE61B]
+	(No symbol) [0x004CD096]
+	(No symbol) [0x0049C840]
+	(No symbol) [0x0049D6A4]
+	GetHandleVerifier [0x00887043+2450739]
+	GetHandleVerifier [0x008827C6+2432182]
+	GetHandleVerifier [0x0089D50E+2542078]
+	GetHandleVerifier [0x00656895+155013]
+	GetHandleVerifier [0x0065CF7D+181357]
+	GetHandleVerifier [0x00647428+92440]
+	GetHandleVerifier [0x006475D0+92864]
+	GetHandleVerifier [0x00631FC0+5296]
+	BaseThreadInitThunk [0x7782FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x77A780CE+286]
+	RtlGetAppContainerNamedObjectPath [0x77A7809E+238]
+
+2025-05-05 04:27:03,504 [INFO] src.modules.vca.platform_adapters.tiktok: 搜索完成，找到 0 个结果
+2025-05-05 04:27:03,504 [INFO] src.modules.vca.crawler_manager: 任务 tiktok_climate change_2 完成，获取到 0 个结果
+2025-05-05 04:27:03,504 [INFO] src.modules.vca.platform_adapters.weibo: 微博适配器已初始化
+2025-05-05 04:27:03,505 [INFO] src.modules.vca.platform_adapters.weibo: 搜索微博视频: climate change, 限制: 2
+2025-05-05 04:27:03,505 [ERROR] src.modules.vca.platform_adapters.weibo: 微博搜索需要设置Cookie
+2025-05-05 04:27:03,505 [INFO] src.modules.vca.crawler_manager: 任务 weibo_climate change_2 完成，获取到 0 个结果
+2025-05-05 04:27:03,506 [INFO] multi_crawler: 平台 facebook 找到 0 个结果
+2025-05-05 04:27:03,506 [INFO] multi_crawler: 平台 youtube 找到 0 个结果
+2025-05-05 04:27:03,506 [INFO] multi_crawler: 平台 bilibili 找到 0 个结果
+2025-05-05 04:27:03,506 [INFO] multi_crawler: 平台 tiktok 找到 0 个结果
+2025-05-05 04:27:03,506 [INFO] multi_crawler: 平台 weibo 找到 0 个结果
+2025-05-05 04:27:03,506 [INFO] multi_crawler: 多平台搜索完成
+2025-05-05 04:27:03,506 [INFO] src.modules.vca.crawler_manager: 爬虫管理器已关闭

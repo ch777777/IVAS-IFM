@@ -1,0 +1,33 @@
+# 核心依赖
+requests>=2.28.1
+beautifulsoup4>=4.11.1
+pytube>=12.1.0
+selenium>=4.5.0
+webdriver-manager>=3.8.4
+pyexecjs>=1.5.1
+
+# 多模态识别依赖
+torch>=1.12.1
+torchvision>=0.13.1
+ultralytics>=8.0.0
+transformers>=4.21.1
+
+# 语义分析依赖
+jieba>=0.42.1
+nltk>=3.7
+sentence-transformers>=2.2.2
+
+# 可选依赖
+opencv-python>=4.6.0
+pillow>=9.2.0
+pandas>=1.5.0
+matplotlib>=3.6.0
+
+pyinstaller==6.3.0
+setuptools==69.1.1
+numpy==1.24.3
+elasticsearch==8.12.0
+pyyaml==6.0.2
+tqdm==4.67.1
+scikit-learn==1.6.1 
+ 
